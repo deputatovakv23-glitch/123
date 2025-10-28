@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оценка экономической эффективности ИС (УП.05)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .header h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header .subtitle {
+            font-size: 1.2em;
+            color: #7f8c8d;
+            font-weight: 300;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+        }
+
+        .card h2 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+
+        .card h3 {
+            color: #34495e;
+            margin: 25px 0 15px 0;
+            font-size: 1.4em;
+        }
+
+        .formula {
+            background: #f8f9fa;
+            border-left: 4px solid #3498db;
+            padding: 15px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 1.1em;
+        }
+
+        .calculation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .calculation-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #e9ecef;
+        }
+
+        .calculation-item h4 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .example {
+            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+            color: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 30px;
+        }
+
+        .example h3 {
+            color: white;
+            border-bottom: 2px solid white;
+        }
+
+        .conclusion {
+            background: linear-gradient(135deg, #00b894 0%, #00a085 100%);
+            color: white;
+            text-align: center;
+            padding: 40px;
+            border-radius: 15px;
+            margin-top: 30px;
+        }
+
+        .conclusion h2 {
+            color: white;
+            border-bottom: 2px solid white;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .card {
+                padding: 20px;
+            }
+            
+            .calculation-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Оценка экономической эффективности ИС (УП.05)</h1>
+            <div class="subtitle">Методика расчета и практический пример</div>
+        </div>
+
+        <div class="card">
+            <h2>Цель оценки</h2>
+            <p>Обосновать экономическую целесообразность разработки информационной системы через сравнение затрат и выгод, полученных при автоматизации бизнес-процессов.</p>
+        </div>
+
+        <div class="card">
+            <h2>1. Подходы к оценке</h2>
+            <div class="calculation-grid">
+                <div class="calculation-item">
+                    <h4>Сравнительный анализ</h4>
+                    <p>Сопоставление базового («как есть») и проектного («как будет») вариантов работы системы.</p>
+                </div>
+                <div class="calculation-item">
+                    <h4>Срок окупаемости</h4>
+                    <p>Простой и понятный показатель для заказчика, показывающий время возврата инвестиций.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>2. Расчет затрат</h2>
+            
+            <h3>А. Единовременные затраты (CAPEX) - К</h3>
+            <div class="calculation-grid">
+                <div class="calculation-item">
+                    <h4>К1. Разработка</h4>
+                    <p>ЗП разработчиков (например, стипендия) + накладные расходы</p>
+                </div>
+                <div class="calculation-item">
+                    <h4>К2. Оборудование и ПО</h4>
+                    <p>Серверы, компьютеры, лицензии</p>
+                </div>
+                <div class="calculation-item">
+                    <h4>К3. Внедрение</h4>
+                    <p>ЗП внедренцев, обучение персонала</p>
+                </div>
+                <div class="calculation-item">
+                    <h4>К4. Прочие</h4>
+                    <p>Непредвиденные расходы (5-10% от К1+К2+К3)</p>
+                </div>
+            </div>
+            
+            <div class="formula">
+                Итого единовременные затраты: К = К1 + К2 + К3 + К4
+            </div>
+
+            <h3>Б. Текущие затраты в год (OPEX) - С</h3>
+            <div class="calculation-grid">
+                <div class="calculation-item">
+                    <h4>С1. Администрирование</h4>
+                    <p>ЗП администратора системы</p>
+                </div>
+                <div class="calculation-item">
+                    <h4>С2. Амортизация</h4>
+                    <p>К2 / Срок службы (например, 5 лет)</p>
+                </div>
+                <div class="calculation-item">
+                    <h4>С3. Коммунальные расходы</h4>
+                    <p>Электричество, интернет</p>
+                </div>
+                <div class="calculation-item">
+                    <h4>С4. Прочие</h4>
+                    <p>Обновление лицензий (≈5% от С1+С2+С3)</p>
+                </div>
+            </div>
+            
+            <div class="formula">
+                Итого текущие затраты за год: С = С1 + С2 + С3 + С4
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>3. Расчет выгод (экономии)</h2>
+            
+            <h3>А. Прямая экономия (Эпрям)</h3>
+            <div class="calculation-grid">
+                <div class="calculation-item">
+                    <h4>Э1. Экономия ФОТ</h4>
+                    <p>Сокращение времени на рутинные операции</p>
+                    <div class="formula">
+                        (Время_до - Время_после) × Кол-во_сотрудников × Рабочих_дней × Часовая_ставка
+                    </div>
+                </div>
+                <div class="calculation-item">
+                    <h4>Э2. Снижение потерь</h4>
+                    <p>Уменьшение ошибок, штрафов за счет автоматизации</p>
+                </div>
+            </div>
+
+            <h3>Б. Косвенные выгоды</h3>
+            <div class="calculation-grid">
+                <div class="calculation-item">
+                    <h4>Качественные улучшения</h4>
+                    <ul style="margin-left: 20px;">
+                        <li>Повышение скорости принятия решений</li>
+                        <li>Улучшение качества обслуживания клиентов</li>
+                        <li>Снижение операционных рисков</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>4. Показатели эффективности</h2>
+            <div class="calculation-grid">
+                <div class="calculation-item">
+                    <h4>Годовой экономический эффект</h4>
+                    <div class="formula">Эгод = Эпрям - С</div>
+                </div>
+                <div class="calculation-item">
+                    <h4>Срок окупаемости (PP)</h4>
+                    <div class="formula">PP = К / Эгод</div>
+                </div>
+                <div class="calculation-item">
+                    <h4>Коэффициент эффективности (Е)</h4>
+                    <div class="formula">Е = Эгод / К</div>
+                    <p style="margin-top: 10px;"><strong>Критерий:</strong> Если Е > 0.2, проект эффективен</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="example">
+            <h3>Пример расчета (упрощенный)</h3>
+            <div class="calculation-grid">
+                <div class="calculation-item" style="background: rgba(255,255,255,0.1);">
+                    <h4>Затраты</h4>
+                    <p>Единовременные (К): 250 000 руб.</p>
+                    <p>Текущие/год (С): 90 000 руб.</p>
+                </div>
+                <div class="calculation-item" style="background: rgba(255,255,255,0.1);">
+                    <h4>Экономия</h4>
+                    <p>Прямая экономия/год (Эпрям): 370 500 руб.</p>
+                    <p>(за счет экономии времени 5 менеджеров)</p>
+                </div>
+                <div class="calculation-item" style="background: rgba(255,255,255,0.1);">
+                    <h4>Результаты</h4>
+                    <p>Эгод = 370 500 - 90 000 = 280 500 руб.</p>
+                    <p>PP = 250 000 / 280 500 ≈ 0.89 года (~11 месяцев)</p>
+                    <p>Е = 280 500 / 250 000 = 1.122 > 0.2</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="conclusion">
+            <h2>Вывод</h2>
+            <p style="font-size: 1.3em; font-weight: bold;">
+                Проект экономически целесообразен, инвестиции окупятся менее чем за год.
+            </p>
+            <p style="margin-top: 15px; opacity: 0.9;">
+                Коэффициент эффективности значительно превышает нормативное значение, 
+                что подтверждает высокую рентабельность инвестиций в разработку информационной системы.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
