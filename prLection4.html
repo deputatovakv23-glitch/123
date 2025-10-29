@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Архитектура ИС "Интернет-магазин" - УП.05</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #2c3e50, #4a6491);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            border-radius: 0 0 10px 10px;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .section {
+            background: white;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eaecef;
+        }
+        
+        h3 {
+            color: #3498db;
+            margin: 20px 0 10px;
+        }
+        
+        .architecture-type {
+            background-color: #e8f4fc;
+            border-left: 4px solid #3498db;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .levels {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .level {
+            flex: 1;
+            min-width: 250px;
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-top: 4px solid #3498db;
+        }
+        
+        .level h4 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .models {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+        
+        .model {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+        
+        .model:hover {
+            transform: translateY(-5px);
+        }
+        
+        .model h4 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .model-number {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background: #3498db;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 10px;
+        }
+        
+        .components {
+            background-color: #fff9e6;
+            border-left: 4px solid #f1c40f;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        ul {
+            padding-left: 20px;
+            margin: 15px 0;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        .conclusion {
+            background-color: #e8f7e8;
+            border-left: 4px solid #2ecc71;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+            text-align: center;
+        }
+        
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+            border-radius: 10px 10px 0 0;
+        }
+        
+        @media (max-width: 768px) {
+            .levels, .models {
+                flex-direction: column;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Архитектура информационной системы "Интернет-магазин"</h1>
+            <p class="subtitle">УП.05: Разработка модели архитектуры ИС</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <section class="section">
+            <h2>Цель проекта</h2>
+            <p>Спроектировать и отобразить графически основные компоненты системы, их взаимодействие и место в общей структуре.</p>
+        </section>
+        
+        <section class="section">
+            <h2>Тип архитектуры</h2>
+            <div class="architecture-type">
+                <p>Для веб-приложений, таких как интернет-магазин, используется <strong>трехуровневая архитектура</strong>, обеспечивающая модульность, масштабируемость и безопасность.</p>
+            </div>
+            
+            <div class="levels">
+                <div class="level">
+                    <h4>Уровень 1: Presentation Layer</h4>
+                    <p>Клиентская часть (интерфейс в браузере)</p>
+                </div>
+                
+                <div class="level">
+                    <h4>Уровень 2: Business Logic Layer</h4>
+                    <p>Серверная часть (основная логика системы)</p>
+                </div>
+                
+                <div class="level">
+                    <h4>Уровень 3: Data Access Layer</h4>
+                    <p>Уровень данных (хранение информации)</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2>Модели архитектуры</h2>
+            
+            <div class="models">
+                <div class="model">
+                    <h4><span class="model-number">1</span>Контекстная диаграмма</h4>
+                    <p>Показывает взаимодействие с внешними системами и субъектами.</p>
+                    <ul>
+                        <li>Покупатель</li>
+                        <li>Платежный шлюз</li>
+                        <li>Курьерская служба</li>
+                        <li>Администратор</li>
+                    </ul>
+                </div>
+                
+                <div class="model">
+                    <h4><span class="model-number">2</span>Компонентная диаграмма</h4>
+                    <p>Отображает основные программные модули и связи между ними.</p>
+                    <ul>
+                        <li>Frontend</li>
+                        <li>Backend (API Gateway, модули)</li>
+                        <li>Уровень данных</li>
+                    </ul>
+                </div>
+                
+                <div class="model">
+                    <h4><span class="model-number">3</span>Физическая архитектура</h4>
+                    <p>Показывает развертывание компонентов на серверах.</p>
+                    <ul>
+                        <li>Балансировщик нагрузки</li>
+                        <li>Веб-серверы</li>
+                        <li>Серверы приложений</li>
+                        <li>Кластер БД</li>
+                    </ul>
+                </div>
+                
+                <div class="model">
+                    <h4><span class="model-number">4</span>Модель данных</h4>
+                    <p>Отображает структуру базы данных.</p>
+                    <ul>
+                        <li>Сущности и их атрибуты</li>
+                        <li>Связи между сущностями</li>
+                        <li>ER-диаграмма</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2>Ключевые компоненты системы</h2>
+            
+            <div class="components">
+                <h3>Frontend (Клиентское приложение)</h3>
+                <ul>
+                    <li>Интерфейс пользователя (React, Vue.js)</li>
+                    <li>Адаптивный дизайн</li>
+                    <li>Клиентская валидация</li>
+                </ul>
+                
+                <h3>Backend (Серверное приложение)</h3>
+                <ul>
+                    <li>API Gateway - единая точка входа</li>
+                    <li>Модуль аутентификации (Auth)</li>
+                    <li>Модуль каталога (Catalog)</li>
+                    <li>Модуль заказов (Order)</li>
+                    <li>Модуль оплаты (Payment)</li>
+                    <li>Модуль уведомлений (Notification)</li>
+                </ul>
+                
+                <h3>Уровень данных</h3>
+                <ul>
+                    <li>База данных (PostgreSQL/MySQL)</li>
+                    <li>Кеш (Redis)</li>
+                    <li>Файловое хранилище (S3)</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2>Оформление отчета по УП.05</h2>
+            <ul>
+                <li><strong>Введение:</strong> Обоснование выбранного типа архитектуры</li>
+                <li><strong>Диаграммы:</strong> Все 4 модели с пояснениями компонентов</li>
+                <li><strong>Связь с требованиями:</strong> Как архитектура удовлетворяет функциональным и нефункциональным требованиям</li>
+                <li><strong>Вывод:</strong> Резюме о оптимальности предложенной архитектуры</li>
+            </ul>
+            
+            <div class="conclusion">
+                <p>Эта работа демонстрирует понимание не только того, <strong>что</strong> делать, но и <strong>как</strong> это должно быть реализовано на практике.</p>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>Учебная практика УП.05 | Архитектура информационной системы "Интернет-магазин"</p>
+        </div>
+    </footer>
+</body>
+</html>
